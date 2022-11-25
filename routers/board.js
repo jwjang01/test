@@ -23,6 +23,29 @@ const boardController = require("../controllers/board.controller");
  */
 boardRouter.get("/read/:idx", boardController.read);
 
+/**
+ * @swagger
+ * paths:
+ *  /api/board/create:
+ *      post:
+ *          summary: "게시글 작성"
+ *          description: "데이터 전달"
+ *          tags: [Board API]
+ *          requestBody:
+ *              description: "게시글 데이터"
+ *              required: true
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          type: object
+ *                          properties:
+ *                              data:
+ *                                  type: string
+ *          responses:
+ *              "200":
+ *                  description: Success
+ *
+ */
 boardRouter.post("/create", boardController.create);
 boardRouter.put("/update", boardController.update);
 boardRouter.delete("/del", boardController.del);
